@@ -14,20 +14,20 @@ help:
 
 
 up:
-	docker compose up -d
+	@docker compose up -d
 
 start:
-	docker compose start
+	@docker compose start
 
 ps:
-	docker compose ps
+	@docker compose ps
 
 stop:
-	docker compose stop
+	@docker compose stop
 
 down:
-	docker compose down
+	@docker compose down
 
 refresh:
-	docker compose down --rmi all --remove-orphans --volumes
-	docker compose up -d
+	@docker compose down --rmi all --remove-orphans --volumes
+	@docker compose up -d
