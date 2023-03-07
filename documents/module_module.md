@@ -10,7 +10,7 @@
 |2|name    |varchar         |x          |○       |              |255   |モジュール名|
 
 
-### module_managementsテーブル
+### module_userテーブル(中間テーブル)
 
 |#|Column   |Data            |Primary_key|Not_null|Default       |Length|Comment         |
 |-|---------|----------------|-----------|--------|--------------|------|----------------|
