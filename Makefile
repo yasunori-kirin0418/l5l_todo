@@ -1,4 +1,4 @@
-.PHONY: help up start ps stop down refresh
+.PHONY: help up start ps stop down refresh db
 
 help:
 	@echo 'make commands.'
@@ -31,3 +31,6 @@ down:
 refresh:
 	@docker compose down --rmi all --remove-orphans --volumes
 	@docker compose up -d
+
+db:
+	@docker compose exec db mysql -u user -p -D l5l_todo
