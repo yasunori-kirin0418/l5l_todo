@@ -5,6 +5,7 @@ namespace Modules\User\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Module\Entities\Module;
 use Modules\User\Database\factories\UserFactory;
 
 class User extends Model
@@ -18,6 +19,11 @@ class User extends Model
         'email',
         'password'
     ];
+
+    public function modules()
+    {
+        return $this->belongsToMany(Module::class);
+    }
 
     protected static function newFactory()
     {
