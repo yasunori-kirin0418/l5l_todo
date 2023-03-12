@@ -10,6 +10,7 @@ use Modules\User\Database\factories\UserFactory;
 class User extends Model
 {
     use HasFactory;
+
     // use SoftDeletes;
 
     protected $fillable = [
@@ -17,7 +18,7 @@ class User extends Model
         'email',
         'password'
     ];
-    
+
     protected static function newFactory()
     {
         return UserFactory::new();
