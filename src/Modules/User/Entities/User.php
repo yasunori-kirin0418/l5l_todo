@@ -2,9 +2,10 @@
 
 namespace Modules\User\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\User\Database\factories\UserFactory;
 
 class User extends Model
 {
@@ -17,8 +18,8 @@ class User extends Model
         'password'
     ];
     
-    // protected static function newFactory()
-    // {
-    //     return \Modules\User\Database\factories\UserFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return UserFactory::new();
+    }
 }
