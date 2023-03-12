@@ -32,5 +32,11 @@ refresh:
 	@docker compose down --rmi all --remove-orphans --volumes
 	@docker compose up -d
 
+phpcs:
+	@docker compose exec app composer phpcs
+
+phpcbf:
+	@docker compose exec app composer phpcbf
+
 db:
 	@docker compose exec db mysql -u user -p -D l5l_todo
