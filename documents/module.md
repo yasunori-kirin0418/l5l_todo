@@ -7,7 +7,7 @@
 |#|Column    |Data            |Primary_key|Not_null|Default                                      |Length|Comment     |
 |-|----------|----------------|-----------|--------|---------------------------------------------|------|------------|
 |1|id        |UNSIGNED_INTEGER|○          |○       |AUTO_INCREMENT                               |      |モジュールID|
-|2|name      |varchar         |x          |○       |                                             |255   |モジュール名|
+|2|name      |VARCHAR         |x          |○       |                                             |255   |モジュール名|
 |5|created_at|DATETIME        |x          |○       |CURRENT_TIMESTAMP                            |      |作成日      |
 |6|updated_at|DATETIME        |x          |○       |CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP|      |更新日      |
 
