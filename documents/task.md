@@ -17,6 +17,7 @@
 |9 |deadline            |date            |x          |x       |                                             |      |締切日                |
 |10|created_at          |datetime        |x          |○       |current_timestamp                            |      |作成日                |
 |11|updated_at          |datetime        |x          |○       |current_timestamp on update current_timestamp|      |更新日                |
+|12|deleted_at          |datetime        |x          |○       |                                             |      |削除日                |
 
 
 ### statusesテーブル
