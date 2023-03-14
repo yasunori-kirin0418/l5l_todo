@@ -2,8 +2,8 @@
 
 namespace Modules\User\Database\Seeders;
 
-use Modules\User\Entities\User;
 use Illuminate\Database\Seeder;
+use Modules\User\Entities\User;
 
 class UserTableSeeder extends Seeder
 {
