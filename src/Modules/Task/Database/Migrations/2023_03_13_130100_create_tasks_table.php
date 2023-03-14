@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id()->comment('タスクID');
             $table->foreignId('module_id')->constrained('modules');
             $table->foreignId('status_id')->constrained('statuses');
-            $table->foreignId('category_id')->nullable()->constrained('categories');
             $table->foreignId('author_id')->constrained('users');
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->string('title')->comment('タイトル');
