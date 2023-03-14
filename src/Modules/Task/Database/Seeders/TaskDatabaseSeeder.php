@@ -2,8 +2,8 @@
 
 namespace Modules\Task\Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 
 class TaskDatabaseSeeder extends Seeder
 {
@@ -16,6 +16,10 @@ class TaskDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call([
+            StatusTableSeeder::class,
+        ]);
+
+        Model::reguard();
     }
 }
