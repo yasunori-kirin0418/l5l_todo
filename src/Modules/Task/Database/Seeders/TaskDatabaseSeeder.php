@@ -18,6 +18,7 @@ class TaskDatabaseSeeder extends Seeder
 
         $this->call([
             StatusTableSeeder::class,
+            TaskTableSeeder::class,
         ]);
 
         Model::reguard();
