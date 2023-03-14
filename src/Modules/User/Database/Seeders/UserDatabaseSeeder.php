@@ -19,5 +19,7 @@ class UserDatabaseSeeder extends Seeder
         $this->call([
             UserTableSeeder::class
         ]);
+
+        Model::reguard();
     }
 }
