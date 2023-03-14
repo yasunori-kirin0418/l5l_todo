@@ -13,7 +13,7 @@ class Task extends Model
     protected $attributes = [
         // src/Modules/Module/Database/Seeders/ModuleTableSeeder.php
         // タスクモジュールのデフォルトID
-        'id' => 1
+        'module_id' => 1
     ];
 
     protected $fillable = [
