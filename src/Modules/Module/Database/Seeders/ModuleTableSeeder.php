@@ -3,9 +3,9 @@
 namespace Modules\Module\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+use Modules\Module\Entities\Module;
 
-class ModuleDatabaseSeeder extends Seeder
+class ModuleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,9 @@ class ModuleDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        $this->call([
-            ModuleTableSeeder::class
+        Module::create([
+            'id' => 1,
+            'name' => 'Task'
         ]);
-
-        Model::reguard();
     }
 }
