@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Module\Database\Seeders;
+namespace Modules\Core\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Module\Entities\Module;
+use Modules\Core\Entities\Module;
 
 class ModuleTableSeeder extends Seeder
 {
@@ -15,8 +15,9 @@ class ModuleTableSeeder extends Seeder
     public function run()
     {
         Module::create([
-            'id' => 1,
-            'name' => 'Task'
+            'id'            => 1,
+            'name'          => 'Task',
+            'description'   => 'Todoアプリのモジュール',
         ]);
     }
 }

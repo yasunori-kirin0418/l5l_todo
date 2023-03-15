@@ -5,7 +5,7 @@ namespace Modules\Task\Database\factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Task\Entities\Status;
 use Modules\Task\Entities\Task;
-use Modules\User\Entities\User;
+use Modules\Core\Entities\User;
 
 class TaskFactory extends Factory
 {

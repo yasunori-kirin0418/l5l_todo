@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('modules', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 255)->comment('モジュール名');
+        Schema::create('users', function (Blueprint $table) {
+            $table->id()->comment('ユーザーID');
+            $table->string('name', 255)->comment('ユーザー名');
+            $table->string('email', 255)->unique()->comment('E-mail');
+            $table->string('password', 255)->comment('パスワード');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modules');
+        Schema::dropIfExists('users');
     }
 };

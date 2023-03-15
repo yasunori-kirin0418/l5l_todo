@@ -17,12 +17,13 @@
 
 ### modulesテーブル
 
-|#|Column    |Data            |Primary_key|Not_null|Default                                      |Length|Comment     |
-|-|----------|----------------|-----------|--------|---------------------------------------------|------|------------|
-|1|id        |UNSIGNED_INTEGER|○          |○       |AUTO_INCREMENT                               |      |モジュールID|
-|2|name      |VARCHAR         |x          |○       |                                             |255   |モジュール名|
-|3|created_at|DATETIME        |x          |○       |CURRENT_TIMESTAMP                            |      |作成日      |
-|4|updated_at|DATETIME        |x          |○       |CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP|      |更新日      |
+|#|Column     |Data            |Primary_key|Not_null|Default                                      |Length|Comment       |
+|-|-----------|----------------|-----------|--------|---------------------------------------------|------|--------------|
+|1|id         |UNSIGNED_INTEGER|○          |○       |AUTO_INCREMENT                               |      |モジュールID  |
+|2|name       |VARCHAR         |x          |○       |                                             |255   |モジュール名  |
+|2|description|VARCHAR         |x          |○       |                                             |255   |モジュール説明|
+|3|created_at |DATETIME        |x          |○       |CURRENT_TIMESTAMP                            |      |作成日        |
+|4|updated_at |DATETIME        |x          |○       |CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP|      |更新日        |
 
 
 ### module_userテーブル(中間テーブル)
