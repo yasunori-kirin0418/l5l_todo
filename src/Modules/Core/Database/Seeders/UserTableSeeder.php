@@ -3,6 +3,7 @@
 namespace Modules\Core\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Core\Entities\Module;
 use Modules\Core\Entities\User;
 
 class UserTableSeeder extends Seeder
@@ -14,6 +15,11 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(5)->create();
+        $module = Module::all();
+
+        User::factory(5)->hasAttached(
+            $module,
+            fn () => ['enable' => true]
+        )->create();
     }
 }

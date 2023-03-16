@@ -17,8 +17,8 @@ class CoreDatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call([
-            UserTableSeeder::class,
             ModuleTableSeeder::class,
+            UserTableSeeder::class,
         ]);
 
         Model::reguard();
