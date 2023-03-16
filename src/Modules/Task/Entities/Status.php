@@ -4,6 +4,7 @@ namespace Modules\Task\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Task\Entities\Task;
 
 class Status extends Model
 {
@@ -14,4 +15,9 @@ class Status extends Model
     ];
 
     public $timestamps = false;
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
