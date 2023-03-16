@@ -24,11 +24,3 @@
 |-|------|----------------|-----------|--------|--------------|------|------------|
 |1|id    |unsigned_integer|○          |○       |auto_increment|      |ステータスID|
 |2|name  |varchar         |x          |○       |              |255   |ステータス名|
-
-
-#### status_taskテーブル(中間テーブル)
-
-|#|Column   |Data            |Primary_key|Not_null|Default       |Length|Comment     |
-|-|---------|----------------|-----------|--------|--------------|------|------------|
-|1|status_id|unsigned_integer|○          |○       |auto_increment|      |ステータスID|
-|2|task_id  |unsigned_integer|○          |○       |auto_increment|      |タスクID    |
