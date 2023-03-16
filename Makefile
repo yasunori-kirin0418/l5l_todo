@@ -38,5 +38,8 @@ phpcs:
 phpcbf:
 	@docker compose exec app composer phpcbf
 
+tinker:
+	@docker compose exec app php artisan tinker
+
 db:
 	@docker compose exec db mysql -u user -p -D l5l_todo
