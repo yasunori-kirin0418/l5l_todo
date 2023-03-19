@@ -9,8 +9,9 @@ help:
 	@echo 'ps:		docker compose ps'
 	@echo 'stop:		docker compose stop'
 	@echo 'down:		docker compose down'
-	@echo 'refresh: 	Delete services, volumes, and networks created by the docker compose commands.'
-	@echo ' 		Then run docker compose up -d to reconfigure the project.'
+	@echo 'refresh:		Delete services, volumes, and networks created by the docker compose commands.'
+	@echo '			Then run docker compose up -d to reconfigure the project.'
+	@echo 'db		Login database.'
 
 
 up:
