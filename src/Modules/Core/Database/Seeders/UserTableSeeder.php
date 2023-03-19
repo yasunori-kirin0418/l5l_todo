@@ -17,9 +17,9 @@ class UserTableSeeder extends Seeder
     {
         $module = Module::all();
 
-        User::factory(5)->hasAttached(
+        User::factory(10)->hasAttached(
             $module,
-            fn () => ['enable' => true]
+            fn () => ['enable' => fake()->boolean()]
         )->create();
     }
 }
