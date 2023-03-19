@@ -73,7 +73,7 @@ db:
 init:
 	@cp src/.env.example src/.env
 	@cp .env.example .env
-	@makes start
+	@make start
 	@docker compose exec app composer install
 	@make dump_autoload
 	@make init_db
