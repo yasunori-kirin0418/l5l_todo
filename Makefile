@@ -18,7 +18,7 @@ help:
 	@echo 'phpcbf:		php_codesniffer code fixing.'
 	@echo 'dump_autoload:	composer dump-autoload'
 	@echo 'tinker:		php artisan tinker.'
-	@echo 'init_db		php artisan module:migrate'
+	@echo 'migrate		php artisan module:migrate'
 	@echo 'reset_db		php artisan module:migrate-reset'
 	@echo 'seed_db		php artisan module:seed'
 	@echo 'db:		Login database.'
@@ -58,7 +58,7 @@ dump_autoload:
 tinker:
 	@docker compose exec app php artisan tinker
 
-init_db:
+migrate:
 	@docker compose exec app php artisan module:migrate
 
 reset_db:
@@ -75,7 +75,5 @@ init:
 	@cp .env.example .env
 	@make start
 	@docker compose exec app composer install
-	@make dump_autoload
-	@make init_db
-	@make seed_db
+	@sleep 3
 	@make restart
