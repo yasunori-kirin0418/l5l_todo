@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Modules\Task\Http\Controllers\Task\Index;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/task', function (Request $request) {
-    return $request->user();
+Route::prefix('/task')->name('task.')->group(function () {
+    Route::get('/', Index::class)->name('index');
 });
