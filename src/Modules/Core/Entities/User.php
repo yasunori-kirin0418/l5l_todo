@@ -28,4 +28,9 @@ class User extends Model
         return $this->belongsToMany(Module::class)
             ->wherePivot('enable', true);
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(\Modules\Task\Entities\Task::class);
+    }
 }

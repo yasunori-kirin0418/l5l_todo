@@ -5,7 +5,6 @@ namespace Modules\Task\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\Core\Entities\User;
 use Modules\Task\Database\factories\TaskFactory;
 use Modules\Task\Entities\Status;
 
@@ -39,6 +38,6 @@ class Task extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\Modules\Core\Entities\User::class);
     }
 }
