@@ -3,7 +3,7 @@
 namespace Modules\Task\Http\Controllers\Task;
 
 use Illuminate\Routing\Controller;
-use Modules\Task\Entities\Task;
+use Modules\Task\Services\Task\TaskListService;
 
 class Index extends Controller
 {
@@ -12,8 +12,8 @@ class Index extends Controller
      *
      * @return json
      **/
-    public function __invoke()
+    public function __invoke(TaskListService $tasks)
     {
-        return response()->json(Task::all());
+        return response()->json($tasks->getTaskList());
     }
 }
