@@ -13,13 +13,10 @@ use Modules\Task\Services\Task\TaskListService;
  **/
 class Index extends Controller
 {
-    /**
-     * __invoke
-     *
-     * @return json
-     **/
     public function __invoke(TaskListService $tasks)
     {
-        return response()->json($tasks->getTaskList());
+        return response()
+            ->json($tasks->getTaskList())
+            ->header('Content-Type', 'application/json');
     }
 }
