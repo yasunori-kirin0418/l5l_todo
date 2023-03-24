@@ -4,29 +4,24 @@ namespace Modules\Task\Http\Controllers\Task;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Task\Entities\Task;
+use Modules\Task\Services\Task\TaskCreateService;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * タスクを作成する。
- *
- * @param 
- * @return json
  **/
 class Create extends Controller
 {
-    public function __invoke(Request $request, Task $task)
+    public function __invoke(Request $request, TaskCreateService $task)
     {
-        $id = $task->create($request->all())->id;
-
         return response()
-            ->json(
-                [
-                    'task_id'       => $id,
-                    'messages'      => 'New task created.',
-                    'request_data'  => $request->all(),
-                ],
-                Response::HTTP_CREATED)
+            ->json( $task->createTask(
+                    $request->status_id,
+                    $request->user_id,
+                    $request->title,
+                    $request->description,
+                    $request->deadline
+            ), Response::HTTP_CREATED)
             ->header('Content-Type', 'application/json');
     }
 }
