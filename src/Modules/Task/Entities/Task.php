@@ -40,4 +40,9 @@ class Task extends Model
     {
         return $this->belongsTo(\Modules\Core\Entities\User::class);
     }
+
+    public function statusName()
+    {
+        return $this->status->name;
+    }
 }
