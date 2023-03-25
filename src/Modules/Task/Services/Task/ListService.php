@@ -7,7 +7,7 @@ use Modules\Task\Entities\Task;
 /**
  * タスク一覧を取得する
  */
-class TaskListService
+class ListService
 {
     /**
      * タスクの一覧を取得する

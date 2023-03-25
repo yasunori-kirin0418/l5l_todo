@@ -3,17 +3,20 @@
 namespace Modules\Task\Http\Controllers\Task;
 
 use Illuminate\Routing\Controller;
-use Modules\Task\Services\Task\TaskListService;
+use Modules\Task\Services\Task\ListService;
 
 /**
  * タスク一覧をJSONレスポンスする。
- *
- * @param TaskListService
- * @return json
  **/
 class Index extends Controller
 {
-    public function __invoke(TaskListService $tasks)
+    /**
+     * タスク一覧をJSONレスポンスする。
+     *
+     * @param TaskListService
+     * @return json
+     **/
+    public function __invoke(ListService $tasks)
     {
         return response()
             ->json($tasks->getTaskList())

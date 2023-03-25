@@ -7,7 +7,7 @@ use Modules\Task\Entities\Task;
 /**
  * 新規タスクを作成する。
  */
-class TaskCreateService
+class CreateService
 {
     /**
      * 新規タスクを作成する。
