@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Task\Http\Controllers\Task\Index;
 use Modules\Task\Http\Controllers\Task\Create;
+use Modules\Task\Http\Controllers\Task\Index;
+use Modules\Task\Http\Controllers\Task\Show;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,6 @@ use Modules\Task\Http\Controllers\Task\Create;
 
 Route::prefix('/task')->name('task.')->group(function () {
     Route::get('/', Index::class)->name('index');
+    Route::get('/{id}', Show::class)->name('show');
     Route::post('/create', Create::class)->name('create');
 });
