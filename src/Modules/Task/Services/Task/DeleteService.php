@@ -5,12 +5,12 @@ namespace Modules\Task\Services\Task;
 use Modules\Task\Entities\Task;
 
 /**
- * タスク一覧を取得する
+ * 指定のタスクを削除する。
  */
 class DeleteService
 {
     /**
-     * タスクの一覧を取得する
+     * 指定のタスクを削除する。
      * @param int $id Task id
      *
      * @return array 削除されたタスクの情報を'deleted_task_info'というキーで返却する。
