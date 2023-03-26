@@ -8,10 +8,18 @@ use Modules\Task\Services\Task\CreateService;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * タスクを作成する。
+ * 新規タスクを作成する。
  **/
 class CreateController extends Controller
 {
+    /**
+     * 新規タスクを作成する。
+     *
+     * @param Request $request
+     * @param CreateService $task
+     *
+     * @return json
+     **/
     public function __invoke(Request $request, CreateService $task)
     {
         return response()
