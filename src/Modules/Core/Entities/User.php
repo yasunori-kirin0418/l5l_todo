@@ -10,14 +10,15 @@ use Modules\Core\Entities\Module;
 
 class User extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
         'email',
         'password'
     ];
-    
+
     protected static function newFactory()
     {
         return UserFactory::new();

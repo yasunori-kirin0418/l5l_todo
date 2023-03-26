@@ -15,7 +15,7 @@ class Module extends Model
         'name',
         'description',
     ];
-    
+
     protected static function newFactory()
     {
         return ModuleFactory::new();

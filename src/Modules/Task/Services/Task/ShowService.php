@@ -11,7 +11,7 @@ class ShowService
 {
     /**
      * 指定されたIDのタスク取得する
-     * @param int $id 
+     * @param int $id
      *
      * @return array
      **/
