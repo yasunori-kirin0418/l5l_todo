@@ -30,6 +30,23 @@ make seed_db
 makeで使えるコマンドについては`make help`で確認してください。
 
 
+### API Endpoint
+
+各エンドポイントへのリクエストで取得できるデータは、`Content-Type: application/json`です。
+
+#### /api/task
+
+|Method|Path            |Description                                   |
+|------|----------------|----------------------------------------------|
+|GET   |`/api/task/`    |登録されているタスク一覧を配列で取得できます。|
+|GET   |`/api/task/{id}`|`{id}`で指定したタスクのみを取得します。      |
+|POST  |`/api/task/`    |新規タスクを作成します。                      |
+|PUT   |`/api/task/{id}`|`{id}`で指定したタスクの内容を更新できます。  |
+|DELETE|`/api/task/{id}`|`{id}`で指定したタスクを論理削除します。      |
+
+リクエストパラメータについては[task.md](./documents/task.md)をご覧ください。
+
+
 ## Memo
 
 `l5l`とは、`laravel`という名称でリポジトリを作成したくなかったため`l5l`と省略しています。特別な意味はありません。
