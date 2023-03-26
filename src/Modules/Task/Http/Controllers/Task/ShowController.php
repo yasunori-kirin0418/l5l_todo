@@ -8,7 +8,7 @@ use Modules\Task\Services\Task\ShowService;
 /**
  * 指定したIDのタスクを取得する。
 **/
-class Show extends Controller
+class ShowController extends Controller
 {
     /**
      * 指定したIDのタスクを取得する。

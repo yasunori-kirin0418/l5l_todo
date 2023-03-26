@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * 指定のタスクを削除する。
  **/
-class Delete extends Controller
+class DeleteController extends Controller
 {
     /**
      * 指定のタスクを削除する。

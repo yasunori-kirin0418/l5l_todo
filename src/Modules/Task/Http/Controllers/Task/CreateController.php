@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * タスクを作成する。
  **/
-class Create extends Controller
+class CreateController extends Controller
 {
     public function __invoke(Request $request, CreateService $task)
     {

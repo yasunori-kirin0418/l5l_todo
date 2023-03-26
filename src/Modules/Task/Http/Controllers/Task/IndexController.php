@@ -8,7 +8,7 @@ use Modules\Task\Services\Task\ListService;
 /**
  * タスク一覧をJSONレスポンスする。
  **/
-class Index extends Controller
+class IndexController extends Controller
 {
     /**
      * タスク一覧をJSONレスポンスする。
