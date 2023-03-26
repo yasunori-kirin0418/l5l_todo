@@ -19,5 +19,5 @@ use Modules\Task\Http\Controllers\Task\Show;
 Route::prefix('/task')->name('task.')->group(function () {
     Route::get('/', Index::class)->name('index');
     Route::get('/{id}', Show::class)->name('show');
-    Route::post('/create', Create::class)->name('create');
+    Route::post('/', Create::class)->name('create');
 });
