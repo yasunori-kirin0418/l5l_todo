@@ -10,7 +10,8 @@ use Modules\Task\Entities\Status;
 
 class Task extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $attributes = [
         // src/Modules/Core/Database/Seeders/ModuleTableSeeder.php
@@ -34,5 +35,15 @@ class Task extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(\Modules\Core\Entities\User::class);
+    }
+
+    public function statusName()
+    {
+        return $this->status->name;
     }
 }

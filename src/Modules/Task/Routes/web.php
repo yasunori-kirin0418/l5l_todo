@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('task')->group(function () {
-    Route::get('/', 'TaskController@index');
-});
+// Route::prefix('task')->group(function () {
+//     Route::get('/', 'TaskController@index');
+// });

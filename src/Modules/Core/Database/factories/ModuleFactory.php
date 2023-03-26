@@ -25,4 +25,3 @@ class ModuleFactory extends Factory
         ];
     }
 }
-

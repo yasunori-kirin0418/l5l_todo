@@ -1,6 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Modules\Task\Http\Controllers\Task\CreateController;
+use Modules\Task\Http\Controllers\Task\DeleteController;
+use Modules\Task\Http\Controllers\Task\IndexController;
+use Modules\Task\Http\Controllers\Task\ShowController;
+use Modules\Task\Http\Controllers\Task\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/task', function (Request $request) {
-    return $request->user();
+Route::prefix('/task')->name('task.')->group(function () {
+    Route::get('/', IndexController::class)->name('index');
+    Route::get('/{id}', ShowController::class)->name('show');
+    Route::post('/', CreateController::class)->name('create');
+    Route::put('/{id}', UpdateController::class)->name('update');
+    Route::delete('/{id}', DeleteController::class)->name('delete');
 });

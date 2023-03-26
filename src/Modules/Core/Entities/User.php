@@ -10,14 +10,15 @@ use Modules\Core\Entities\Module;
 
 class User extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
         'email',
         'password'
     ];
-    
+
     protected static function newFactory()
     {
         return UserFactory::new();
@@ -27,5 +28,10 @@ class User extends Model
     {
         return $this->belongsToMany(Module::class)
             ->wherePivot('enable', true);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(\Modules\Task\Entities\Task::class);
     }
 }
