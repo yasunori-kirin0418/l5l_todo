@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Task\Http\Controllers\Task\Create;
+use Modules\Task\Http\Controllers\Task\Delete;
 use Modules\Task\Http\Controllers\Task\Index;
 use Modules\Task\Http\Controllers\Task\Show;
 
@@ -20,4 +21,5 @@ Route::prefix('/task')->name('task.')->group(function () {
     Route::get('/', Index::class)->name('index');
     Route::get('/{id}', Show::class)->name('show');
     Route::post('/', Create::class)->name('create');
+    Route::delete('/{id}', Delete::class)->name('delete');
 });
