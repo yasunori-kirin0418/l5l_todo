@@ -6,6 +6,7 @@ use Modules\Task\Http\Controllers\Task\DeleteController;
 use Modules\Task\Http\Controllers\Task\IndexController;
 use Modules\Task\Http\Controllers\Task\ShowController;
 use Modules\Task\Http\Controllers\Task\UpdateController;
+use Modules\Task\Http\Controllers\Status\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::prefix('/task')->name('task.')->group(function () {
     Route::post('/', CreateController::class)->name('create');
     Route::put('/{id}', UpdateController::class)->name('update');
     Route::delete('/{id}', DeleteController::class)->name('delete');
+});
+
+Route::prefix('/status')->name('status.')->group(function () {
+    Route::get('/', ListController::class)->name('index');
 });
