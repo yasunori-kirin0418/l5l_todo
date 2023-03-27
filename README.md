@@ -30,6 +30,13 @@ make seed_db
 makeで使えるコマンドについては`make help`で確認してください。
 
 
+### API Endpoints
+
+各エンドポイントへのリクエストで取得できるデータは、`Content-Type: application/json`です。
+
+リクエストパラメータやレスポンスについては[api.md](./documents/api.md)をご覧ください。
+
+
 ## Memo
 
 `l5l`とは、`laravel`という名称でリポジトリを作成したくなかったため`l5l`と省略しています。特別な意味はありません。

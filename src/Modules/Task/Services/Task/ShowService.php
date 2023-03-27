@@ -15,8 +15,17 @@ class ShowService
      *
      * @return array
      **/
-    public function getTask(int $id)
+    public static function getTask(int $id)
     {
-        return Task::find($id);
+        return Task::find($id, [
+            'id',
+            'status_id',
+            'user_id',
+            'title',
+            'description',
+            'deadline',
+            'created_at',
+            'updated_at',
+        ]);
     }
 }

@@ -16,8 +16,15 @@ class ListService
      **/
     public function getTaskList()
     {
-        $tasks = Task::all();
-
-        return $tasks;
+        return Task::get([
+            'id',
+            'status_id',
+            'user_id',
+            'title',
+            'description',
+            'deadline',
+            'created_at',
+            'updated_at',
+        ]);
     }
 }

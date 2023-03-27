@@ -38,7 +38,7 @@ class CreateService
         );
 
         return [
-            'task_id' => $task->id,
+            'created_data' => ShowService::getTask($task->id),
             'request_date' => [
                 'status_id'     => $statusId,
                 'user_id'       => $userId,

@@ -37,7 +37,7 @@ class UpdateService
         ]);
 
         return [
-            'task_id' => $id,
+            'updated_data' => ShowService::getTask($id),
             'request_date' => [
                 'status_id'     => $statusId,
                 'user_id'       => $userId,
