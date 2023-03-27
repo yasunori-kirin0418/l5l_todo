@@ -42,3 +42,13 @@
     * 完了
 * Cancelled
     * 中止
+
+## fillable
+
+tasksテーブルに対して登録できるカラムは以下の通りです。
+
+* status_id
+* user_id
+* title
+* description
+* deadline
