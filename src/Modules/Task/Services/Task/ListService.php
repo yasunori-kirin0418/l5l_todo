@@ -23,6 +23,8 @@ class ListService
             'title',
             'description',
             'deadline',
+            'created_at',
+            'updated_at',
         ]);
     }
 }
