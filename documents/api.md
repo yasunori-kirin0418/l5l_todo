@@ -17,9 +17,9 @@
 
 |Method|Path            |Description                                   |
 |------|----------------|----------------------------------------------|
-|GET   |`/api/task`    |登録されているタスク一覧を配列で取得できます。|
+|GET   |`/api/task`     |登録されているタスク一覧を配列で取得できます。|
 |GET   |`/api/task/{id}`|`{id}`で指定したタスクのみを取得します。      |
-|POST  |`/api/task`    |新規タスクを作成します。                      |
+|POST  |`/api/task`     |新規タスクを作成します。                      |
 |PUT   |`/api/task/{id}`|`{id}`で指定したタスクの内容を更新できます。  |
 |DELETE|`/api/task/{id}`|`{id}`で指定したタスクを論理削除します。      |
 
@@ -89,9 +89,9 @@
 
 |key        |default    |require|description                                             |
 |-----------|-----------|-------|--------------------------------------------------------|
-|status_id  |1          |x      |デフォルト値は'Draft'のstatus.idが割り当てられています。|
+|status_id  |1          |○      |デフォルト値は'Draft'のstatus.idが割り当てられています。|
 |user_id    |           |○      |ユーザーIDです。                                        |
-|title      |None title.|x      |タスクのタイトルです。                                  |
+|title      |None title.|○      |タスクのタイトルです。                                  |
 |description|null       |x      |タスクの説明です。                                      |
 |deadline   |null       |x      |タスクの締切日です。                                    |
 
@@ -212,4 +212,39 @@
         "deleted_at": "2023-03-27T15:45:03.000000Z"
     }
 }
+```
+
+## ステータス一覧API
+
+|Method|Path         |Description                                         |
+|------|-------------|----------------------------------------------------|
+|GET   |`/api/status`|タスク管理に使用できるステータスの一覧を取得します。|
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Draft"
+    },
+    {
+        "id": 2,
+        "name": "Not Started"
+    },
+    {
+        "id": 3,
+        "name": "In Progress"
+    },
+    {
+        "id": 4,
+        "name": "Pending"
+    },
+    {
+        "id": 5,
+        "name": "Done"
+    },
+    {
+        "id": 6,
+        "name": "Cancelled"
+    }
+]
 ```
