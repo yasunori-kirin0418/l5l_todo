@@ -32,17 +32,32 @@ class Task extends Model
         return TaskFactory::new();
     }
 
+    /**
+     * statusesテーブルとのリレーション
+     *
+     * @return Status
+     **/
     public function status()
     {
         return $this->belongsTo(Status::class);
     }
 
+    /**
+     * usersテーブルとのリレーション
+     *
+     * @return User
+     **/
     public function user()
     {
         return $this->belongsTo(\Modules\Core\Entities\User::class);
     }
 
-    public function statusName()
+    /**
+     * ステータス名を取得する
+     *
+     * @return string
+     **/
+    public function getStatusNameAttribute()
     {
         return $this->status->name;
     }
