@@ -12,14 +12,15 @@ class UsableModuleService
     /**
      * ユーザーが対象のモジュールを使えるか確認する
      *
-     * @param User $user 対象のユーザー
+     * @param int $userId 対象のユーザー
      * @param int $moduleId 対象のモジュールID
      * @return bool
      **/
     public static function isUsableModule(
-        User $user,
+        int $userId,
         int $moduleId
     ) {
+        $user = User::find($userId);
         return $user->modules->contains('id', $moduleId);
     }
 }
