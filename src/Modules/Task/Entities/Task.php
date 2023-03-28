@@ -61,4 +61,16 @@ class Task extends Model
     {
         return $this->status->name;
     }
+
+    /**
+     * モジュールIDを取得
+     *
+     * protected $attributesにセットしたモジュールIDを取得する良い方法を知りたい…
+     *
+     * @return int
+     **/
+    public static function moduleId()
+    {
+        return 1;
+    }
 }
