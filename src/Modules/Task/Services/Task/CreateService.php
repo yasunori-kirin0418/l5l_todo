@@ -36,7 +36,6 @@ class CreateService
                 'description'   => $description,
                 'deadline'      => $deadline,
             ];
-
             $task = Task::create($createData);
 
             return ['created_data' => ShowService::getTask($task->id)];

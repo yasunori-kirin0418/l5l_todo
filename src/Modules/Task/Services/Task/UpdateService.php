@@ -2,6 +2,7 @@
 
 namespace Modules\Task\Services\Task;
 
+use Modules\Core\Services\User\UsableModuleService;
 use Modules\Task\Entities\Task;
 
 /**
@@ -28,23 +29,19 @@ class UpdateService
         string $description,
         string $deadline,
     ) {
-        Task::find($id)->update([
-            'status_id'     => $statusId,
-            'user_id'       => $userId,
-            'title'         => $title,
-            'description'   => $description,
-            'deadline'      => $deadline,
-        ]);
-
-        return [
-            'updated_data' => ShowService::getTask($id),
-            'request_date' => [
+        if (UsableModuleService::isUsableModule($userId, Task::moduleId())) {
+            $updateData = [
                 'status_id'     => $statusId,
                 'user_id'       => $userId,
                 'title'         => $title,
                 'description'   => $description,
                 'deadline'      => $deadline,
-            ],
-        ];
+            ];
+            Task::find($id)->update($updateData);
+
+            return ['updated_data' => ShowService::getTask($id)];
+        }
+
+        return ['updated_data' => 'Aborted task update.'];
     }
 }
