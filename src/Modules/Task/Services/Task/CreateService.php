@@ -2,6 +2,7 @@
 
 namespace Modules\Task\Services\Task;
 
+use Modules\Core\Services\User\UsableModuleService;
 use Modules\Task\Entities\Task;
 
 /**
@@ -27,25 +28,20 @@ class CreateService
         ?string $description = null,
         ?string $deadline = null
     ) {
-        $task = Task::create(
-            [
+        if (UsableModuleService::isUsableModule($userId, Task::moduleId())) {
+            $createData = [
                 'status_id'     => $statusId,
                 'user_id'       => $userId,
                 'title'         => $title,
                 'description'   => $description,
                 'deadline'      => $deadline,
-            ]
-        );
+            ];
 
-        return [
-            'created_data' => ShowService::getTask($task->id),
-            'request_date' => [
-                'status_id'     => $statusId,
-                'user_id'       => $userId,
-                'title'         => $title,
-                'description'   => $description,
-                'deadline'      => $deadline,
-            ],
-        ];
+            $task = Task::create($createData);
+
+            return ['created_data' => ShowService::getTask($task->id)];
+        }
+
+        return ['create_data' => 'Aborted task create.'];
     }
 }
