@@ -36,7 +36,14 @@ makeで使えるコマンドについては`make help`で確認してくださ�
 
 リクエストパラメータやレスポンスについては[api.md](./documents/api.md)をご覧ください。
 
+テストに[Postman](https://www.postman.com/) を使用しています。
+Postmanで使用している[プロファイル](./documents/l5l_todo.postman_collection.json) を用意してあります。
 
-## Memo
+## ::NOTE::
+
+現時点では、完璧な機能として完成はしていません。
+最低限の機能として、`tasks`テーブルに対してのCRUD処理と`statuses`テーブルからステータスのリストを取得する機能が実装されています。
+
+### Memo
 
 `l5l`とは、`laravel`という名称でリポジトリを作成したくなかったため`l5l`と省略しています。特別な意味はありません。
